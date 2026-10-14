@@ -1,0 +1,28 @@
+name: "Level 01 · First Blood"
+
+# Runs when something this level depends on changes (or when you start it by hand).
+on:
+  push:
+    paths:
+      - "tests/level_01/**"
+      - "tests/conftest.py"
+      - "src/**"
+      - "grader/**"
+      - "requirements.txt"
+      - "pyproject.toml"
+      - ".github/workflows/level-01.yml"
+      - ".github/workflows/_level.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  level:
+    uses: ./.github/workflows/_level.yml
+    with:
+      level: 1

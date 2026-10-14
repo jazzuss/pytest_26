@@ -1,0 +1,20 @@
+level-XX:
+
+What:
+Why:
+Learned:
+
+# ── QUEST LOG ENTRY ─────────────────────────────────────────────────────
+# Every commit that changes tests/ needs one. Write it in your own words.
+#
+# Line 1    level-NN: a short summary (at least 3 words)
+#           e.g.  level-03: catch the shapeshifter with pytest.raises
+#           Use  boss:  instead of  level-NN:  for Final Boss work.
+#
+# What:     What did you do? Which tests did you add or change?
+# Why:      Why do these tests catch the monsters? Why this technique?
+#           (What and Why need at least 5 words each.)
+# Learned:  Optional. Something you learned, or got stuck on.
+#
+# Lines starting with # are ignored. Save and close the editor to commit.
+# Close it without changing anything to cancel the commit.

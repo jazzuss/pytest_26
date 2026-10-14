@@ -1,0 +1,6 @@
+#!/bin/sh
+# Checks your quest log entry before the commit is made.
+# Installed by:  python -m grader setup
+# (Skipping it with --no-verify doesn't help: CI checks every entry too.)
+if command -v python >/dev/null 2>&1; then PY=python; else PY=python3; fi
+exec "$PY" -m grader commit-msg "$1"

@@ -1,0 +1,37 @@
+# Reusable workflow: every level-NN.yml calls this with its level number.
+# One file holds the steps, so all ten levels behave the same way.
+name: Level runner
+
+on:
+  workflow_call:
+    inputs:
+      level:
+        description: The level number to check
+        required: true
+        type: number
+
+permissions:
+  contents: read
+
+jobs:
+  quest:
+    name: Quest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the repository (full history, for the quest log)
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install the tools of the trade
+        run: python -m pip install -r requirements.txt
+
+      - name: Face the level
+        run: python -m grader check ${{ inputs.level }}

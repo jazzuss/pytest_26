@@ -1,0 +1,11 @@
+# PyTest Quest settings. The dungeon isn't installed as a package: pytest finds
+# it through `pythonpath` below, which lets the grader swap in monster copies.
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = ["--import-mode=importlib", "-ra"]
+
+[tool.coverage.run]
+branch = true

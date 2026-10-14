@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.json
+htmlcov/
+.DS_Store
+
+# Instructor-only folder. Never push it.
+/solutions/
